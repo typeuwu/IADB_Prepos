@@ -1,0 +1,45 @@
+//Colors 
+
+$color-white: rgb(255, 255, 255);
+$color-gray: #ccc;
+$color-blue: #29ABE2;
+$color-black: rgb(0, 0, 0);
+$light-gray: #e2e2e2;
+
+//Typography
+
+$gotham-book: "Gotham Narrow Book";
+$gotham-light: "Gotham Narrow Light";
+$gotham-Ex_light: "Gotham Narrow Extra Light";
+$gotham-medium: "Gotham Narrow Medium";
+$gotham-bold: "Gotham Narrow Bold";
+
+//Padding-margin
+
+$padding-second: 4px 5px;
+$padding-nav: 0 7px;
+$padding-language: 0 10px;
+$padding-link: 23px 0 21px;
+$margin-main: 0 auto;
+
+//Width-height
+
+$width-maximum: 100%;
+$width-lowest: 14%;
+$height-main: 62px;
+$line-height: 100%;
+$width-footer: (((100 - 27%) / 4) - 0.2);
+
+//Align
+
+$text-left: left;
+$float-left: left;
+
+
+//First mobile
+
+$xl-min: 1280px;
+$lg-min: 990px;
+$md-min: 768px;
+$sm-min: 576px;
+$xs-min: 480px;

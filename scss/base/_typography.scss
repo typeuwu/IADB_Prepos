@@ -1,0 +1,46 @@
+/*-------------------------------------------*\
+            $TYPOGRAPHY
+\*--------------------------------------------*/
+/**/
+body{
+    font-family: $gotham-medium;
+}
+
+header, nav, pre {
+    text-transform: uppercase;
+    font-family: $gotham-book;
+}
+
+.block-search{
+    font-family: $gotham-book;
+}
+
+.menu ul {
+
+    font-family: $gotham-Ex_light;
+    font-size: 15px;
+}
+
+.language {
+    font-family: $gotham-light;
+    font-size: 13px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+li{
+    list-style: none;
+}
+
+h2{
+    font-family: $gotham-medium;
+    color: $color-blue;
+}

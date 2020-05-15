@@ -1,0 +1,917 @@
+
+/*-------------------------------------------*\
+            $LAYOUT
+\*--------------------------------------------*/
+/**/
+@import "../node_modules/compass-mixins/lib/compass";
+@import "../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+*,
+::after,
+::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+ 
+div,
+nav,
+section {
+    display: block;
+ 
+}
+ 
+media,
+img {
+    max-width: 100%;
+}
+ 
+html {
+    background-color: $light-gray;
+    height: 100%;
+}
+ 
+body {
+ 
+    background-color: $color-gray;
+}
+ 
+section {
+    width: 100%;
+    height: 200vw;
+    background: #e2e2e2;
+    @include breakpoint($xl-min){
+        height: 50vw;
+    }
+}
+
+#navbar_toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    padding: 10px;
+    height: 62px;
+    width: 62px;
+    border: 0;
+    background: transparent;
+    border: 0;
+    border-left: 1px solid #f3f3f3;
+    border-right: 1px solid #f3f3f3;
+    &:hover, &.active {
+      background: #f3f3f3;
+    }
+    @include breakpoint($xl-min){
+        display: none;
+    }
+    .icon-bar {
+      float: left;
+      width: 100%;
+      height: 2px;
+      background-color: $color-blue;
+      margin: 4px 0;
+    }
+}
+ 
+.container-footer {
+    margin: 0 auto;
+}
+ 
+header {
+    float: left;
+    width: 100%;
+    margin: auto;
+    height: auto;
+    top: 0;
+    left: 0;
+    position: relative;
+    z-index: 1000;
+    font-size: 16px;
+ 
+    @include breakpoint($xl-min) {
+        background: #fff;
+    }
+    .container{
+        @include breakpoint($xl-min){
+            max-width: 1280px;
+            margin: auto;
+        }
+    }
+}
+ 
+.header-menu {
+    height: $height-main;
+    width: $width-maximum;
+    float: $float-left;
+    min-height: $height-main;
+    background-color: $color-white;
+ 
+    @include breakpoint($xl-min){
+        width: 25%;
+    }
+ 
+    .logo {
+        position: relative;
+        margin: 0 auto;
+        height: 62px;
+ 
+        a {
+            img {
+                margin: 10px;
+                position: absolute;
+                transition: opacity 1s ease-in-out;
+                width: 250px;
+                @include breakpoint($xl-min){
+                    width: 95%;
+                }
+            }
+        }
+ 
+        .top {
+            animation-duration: 8s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-name: image_top;
+            animation-timing-function: ease-in-out;
+        }
+ 
+        .bottom {
+            animation-duration: 8s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-name: image_bottom;
+            animation-timing-function: ease-in-out;
+        }
+    }
+}
+ 
+@keyframes image_top {
+    0% {
+        opacity: 1;
+    }
+ 
+    25% {
+        opacity: 1;
+    }
+ 
+    50% {
+        opacity: 1;
+    }
+ 
+    75% {
+        opacity: 0;
+    }
+ 
+    100% {
+        opacity: 0;
+    }
+}
+ 
+ 
+@keyframes image_bottom {
+    0% {
+        opacity: 0;
+    }
+ 
+    25% {
+        opacity: 0;
+    }
+ 
+    50% {
+        opacity: 1;
+    }
+ 
+    75% {
+        opacity: 1;
+    }
+ 
+    100% {
+        opacity: 1;
+    }
+}
+ 
+.region-primary {
+    float: $float-left;
+    position: relative;
+    width: $width-maximum;
+    background: $color-white;
+    //display: none;
+    @include breakpoint($xl-min){
+        display: block;
+        width: 75%;
+    }
+    .container-search{
+        #search-icon {
+            float: left;
+            font-size: 28px;
+            line-height: 100%;
+            padding: 0 10px;
+            cursor: pointer;
+            margin: 10px 0 10px 10%;
+            color: $color-black;
+            border: 0px solid transparent;
+            @include breakpoint($xl-min){
+                position: absolute;
+                padding: 17px 0;
+                right: 0;
+                top: 0;
+                margin: 0;
+            }
+        }
+    }
+    .block-search {
+        display: none;
+    } 
+    .container-search:hover {
+        .block-search {
+            display: block;
+            float: left;
+            position: relative;
+            width: 100%;
+            margin-bottom: 10px;
+            @include breakpoint($xl-min){
+                position: absolute;
+                right: 0;
+                top: 62px;
+                max-width: 280px;
+            }
+            form {
+                float: left;
+                width: 100%;
+                margin-top: 20px;
+                padding: 0 10px;
+                position: absolute;
+                display: block;
+                float: $float-left;
+                @include breakpoint($xl-min){
+                    margin-top: 30px;
+                    padding: 0;
+                }
+            }
+    
+            .search {
+                border: 1px solid $color-gray;
+                float: left;
+                width: 100%;
+                height: 34px;
+                font-size: 16px;
+                padding: 5px 36px 5px 10px;
+                border-radius: 20px;
+                @include breakpoint($xl-min){
+                    border: 0;
+                }
+            }
+    
+            .search_btn {
+                float: left;
+                height: 34px;
+                width: 34px;
+                margin: 0 0 0 -34px;
+                font-size: 14px;
+                padding: 0;
+                background-color: $color-blue;
+                color: rgb(255, 255, 255);
+                border: 0;
+                border-radius: 50%;
+                cursor: pointer;
+                content: " ";
+    
+                &:hover {
+                    background-color: rgb(0, 55, 130);
+                    display: block;
+                    width: 34px;
+                    height: 34px;
+                    border-radius: 50%;
+                }
+    
+            }
+    
+            .menu-search {
+                float: $float-left;
+                text-transform: none;
+                width: 80%;
+                background-color: rgba(0, 55, 130, 0.9);
+                margin: 0 0 0 10%;
+                padding: 60px 0 0 0;
+                border-radius: 0 0 20px 20px;
+                @include breakpoint($xl-min){
+                    padding: 70px 0 0 0;
+                    background-color: rgba(0, 55, 130, 0.7);
+                }
+                li {
+                    float: $float-left;
+                    width: 100%;
+                    padding: 5px 10px;
+                    @include breakpoint($xl-min){
+                        padding: 7px;
+                    }
+                    a {
+                        display: block;
+                        color: $color-white;
+                        padding: 5px 10px;
+                        font-size: 16px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+ 
+    .language-switch {
+        float: right;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 40px;
+        width: 80%;
+        text-align: right;
+        @include breakpoint($xs-min){
+            width: 40%;
+        }
+        @include breakpoint($xl-min){
+            text-align: left;
+            top: 0;
+            position: relative;
+            width: 14%;
+            height: 62px;
+            padding-right: 3%;
+        }
+        li.language{
+            display: block;
+            padding: 0 10px;
+            font-weight: bold;
+            a{
+                width: 100%;
+                padding: 23px 0;
+                font-size: 14px;
+                @include breakpoint($xl-min){
+                    float: left;
+                }
+            }
+
+            ul.language-expanded{
+                display: none;
+            }
+
+            &:hover{
+                ul.language-expanded{
+                    margin: 0;
+                    padding: 0;
+                    display: block;
+                    li{
+                        width: 115px;
+                        padding: 0 10px;
+                        position: relative;
+                        background: rgba(245,245,245,0.9);
+                        @include inline-block();
+                        @include breakpoint($md-min){
+                            text-align: left;
+                        }
+                        a{
+                            float: left;
+                            text-align: left;
+                            width: 100%;
+                            font-size: 14px;
+                            padding: 10px 0;
+                            color: $color-black;  
+                            border-top: 1px solid $color-gray;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+ 
+    .block-mainmenu{
+        float: left;
+        width: $width-maximum;
+        @include breakpoint($xl-min){
+            width: 76%;
+        }
+
+        .menu-links {
+            float: left;
+            width: $width-maximum;
+            padding: 0;
+            margin: 0;
+            @include breakpoint($xs-min){
+                width: 50%;
+            }
+            @include breakpoint($xl-min){
+                width: 100%;
+            }
+
+            > .menu{
+                
+                .menu-item--expanded,
+                .menu-item--expanded-paises,
+                .menu-item--expanded-sectores,
+                .menu-item--expanded-cono,
+                .menu-item--expanded-noticias {
+                    display: none;
+        
+                    @include breakpoint($xs-min){
+                        width: 200%;
+                    }
+                    @include breakpoint($xl-min) {
+                        background-color: rgba(245, 245, 245, 0.9);
+                        column-count: 2;
+                        left: 0;
+                        position: absolute;
+                        padding: 10px;
+                        width: $width-maximum;
+                    }
+                }
+        
+                .menu-item--expanded-paises,
+                .menu-item--expanded-sectores {
+                    @include breakpoint($xl-min){
+                        column-count: 4;
+                    }
+                }
+        
+                .menu-item--expanded-cono,
+                .menu-item--expanded-noticias {
+                    @include breakpoint($xl-min){
+                        column-count: 1;
+                    }
+                }
+        
+                .menu-item--expanded li,
+                .menu-item--expanded-paises li,
+                .menu-item--expanded-sectores li,
+                .menu-item--expanded-cono li,
+                .menu-item--expanded-noticias li{
+                        border-top: 1px solid $color-gray;
+                        width: $width-maximum;
+                        padding-top: 0;
+                        text-align: left;
+                        @include breakpoint($xs-min){
+                            width: 50%;
+                        }
+                        @include breakpoint($md-min){
+                            width: 25%;
+                        }
+                        @include breakpoint($xl-min){
+                            width: $width-maximum;
+                            border: 0;
+                            border-top: 1px solid $color-gray;
+                        }
+
+                        a{
+                            font-size: 15px;
+                            font-weight: 600;
+                            padding: 8px 5px;
+                            @include breakpoint($xl-min){
+                                padding: 4px 8px;
+                            }
+                        }
+
+                }
+
+            }
+     
+            li {
+                float: left;
+                width: $width-maximum;
+                padding: 0;
+                margin: 0;
+                text-align: left;
+                border-bottom: 1px solid $color-blue;
+                @include inline-block(middle);
+                @include breakpoint($xl-min){
+                    float: left;
+                    width: auto;
+                    text-align: center;
+                    border: none;
+                    padding: 0 7px;
+                }
+                 a {
+                    display: block;
+                    font-size: 16px;
+                    color: $color-blue;
+                    padding: 10px 20px;
+                    &:hover{
+                        background: rgba(255,255,255,0.5);
+                    }
+                    @include breakpoint($xl-min) {
+                        color: #000;
+                        padding: 23px 0px 21px;
+                        font-size: 16px;
+                        line-height: 100%;
+                        max-height: 62px;
+                        &:hover {
+                            background: transparent;
+                        }
+                    }
+                }
+                
+
+            }
+     
+            
+     
+            li:hover {
+     
+                .menu-item--expanded,
+                .menu-item--expanded-paises,
+                .menu-item--expanded-sectores,
+                .menu-item--expanded-cono,
+                .menu-item--expanded-noticias {
+                    display: block;
+                    position: absolute;
+                    padding: 10px;
+                    top: 62px;
+                    left: 0;
+                    width: 83%;
+     
+                }
+     
+                .menu-item--expanded-cono {
+                    width: 25%;
+                    left: 41%;
+                }
+     
+                .menu-item--expanded-noticias {
+                    width: 25%;
+                    left: 54%;
+                }
+            }
+        }
+    }
+}
+ 
+ 
+    
+ 
+ 
+//Footer
+ 
+footer {
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: none;
+
+    .container{
+        width: 100%;
+        padding: 0;
+    }
+    @include breakpoint($lg-min){
+        width: 990px;
+    }
+    @include breakpoint($xl-min){
+        width: 1280px;
+    }
+ 
+    .footer-gray {
+        float: left;
+        width: 100%;
+        position: relative;
+        background-color: $color-white;
+        @include breakpoint($xl-min){
+            background: rgba(186, 186, 186, 1);
+            background: linear-gradient(to bottom, whitesmoke 0px, rgba(245, 245, 245, 0.86) 65px, white 66px, white 100px);  
+        }
+ 
+        .region-second {
+            float: left;
+            width: 100%;
+ 
+            nav {
+                float: left;
+                width: $width-maximum;
+                padding: 1px 0;
+                position: relative;
+                z-index: 2;
+                @include breakpoint($xl-min){
+                    width: $width-footer;
+                    padding: 0;
+                }
+
+                h2 {
+                    float: left;
+                    font-size: 18px;
+                    width: 100%;
+                    margin: 0;
+                    padding: 16px 16px !important;
+                    text-align: left;
+                    font-weight: normal;
+                    background-color: #f5f5f5;
+                    border-bottom: 0;
+                    cursor: pointer;
+                    position: relative;
+                    line-height: 100%;
+                    @include breakpoint($md-min){
+                        font-size: 18px;
+                    }
+                    @include breakpoint($xl-min){
+                        background-color: transparent;
+                        font-size: 19px;
+                        padding: 16px 0px;
+                        height: 60px;
+
+                    }
+                    &::after{
+                        display: block;
+                        position: absolute;
+                        bottom: 5px;
+                        right: 5px;
+                        cursor: pointer;
+                        content: " ";
+                        background: url(../../logos/icons/icon-open-footer.png) right 14px no-repeat;
+                        background-size: 32px;
+                        height: 50px;
+                        width: 50px;
+                        @include breakpoint($xl-min) {
+                            display: none;
+                        }
+                    }
+                }
+ 
+                &:first-child {
+                    @include breakpoint($xl-min){
+                        text-align: center;
+                        height: 356px;
+                    }
+                    ul {
+                        &.menu {
+                            margin: 0;
+                            padding: 20px;
+                            text-align: center;
+                            @include breakpoint($xl-min){
+                                float: none;
+                                max-width: 370px;
+                                display: inline-block;
+                            }
+                            li {
+                                width: auto;
+                                float: none;
+                                margin: 0 11px;
+                            }
+                        }
+                    }
+                    h2{
+                        @include breakpoint($xl-min){
+                            text-align: center;
+                            padding: 21px 0 0 0;
+                            display: block;
+                        }
+                    }
+                }
+
+                &:last-child{
+                    h2{
+                        @include breakpoint($xl-min){
+                            padding-right: 35px;
+                        }
+
+                        &::before{
+                            display: none;
+                            @include breakpoint($xl-min){
+                                display: block;
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                right: 5px;
+                                cursor: pointer;
+                                background: url(../../logos/icons/icon-open-footer.png);
+                                background-size: 32px;
+                                background-repeat: no-repeat;
+                                background-position: right 14px;
+                                height: 50px;
+                                width: 50px;
+                            }
+                        }
+                    }
+                }
+                ul {
+                    &.menu {
+                        float: left;
+                        display: block;
+                        width: 100%;
+                        padding: 10px 10px 10px 30px;
+                        @include breakpoint($xl-min){
+                            padding-left: 0;
+                        }
+ 
+                        li {
+                            width: 100%;
+                            display: inline-block;
+                            vertical-align: middle;
+                            padding: 0;
+                            margin: 5px 0;
+                            font-size: 18px;
+ 
+                            a {
+                                color: #313131;
+                                text-align: left;
+                                margin-bottom: 6px;
+                                display: block;
+                                font-size: 14px;
+                                text-transform: none;
+ 
+                                &.icon-annual,
+                                &.icon-blog,
+                                &.icon-facebook,
+                                &.icon-instagram,
+                                &.icon-twitter,
+                                &.icon-youtube {
+                                    background-image: url(../../logos/icons/social-icon-n-es.png);
+                                    background-size: 206px;
+                                    width: 58px;
+                                    height: 58px;
+                                    display: inline-block;
+ 
+                                    &:hover {
+                                        background-image: url(../../logos/icons/social-icon-es.png);
+                                        background-size: 206px;
+                                        width: 58px;
+                                        height: 58px;
+                                        display: inline-block;
+                                    }
+                                }
+ 
+                                &.icon-annual {
+                                    background-position: 0 -130px;
+                                }
+ 
+                                &.icon-blog {
+                                    background-position: -77px 0;
+                                }
+ 
+                                &.icon-facebook {
+                                    background-position: -77px -65px;
+                                }
+ 
+                                &.icon-instagram {
+                                    background-position: -148px -65px;
+                                }
+ 
+                                &.icon-twitter {
+                                    background-position: 0 -65px;
+                                }
+ 
+                                &.icon-youtube {
+                                    background-position: -148px 0;
+                                }
+ 
+                            }
+                        }
+                    }
+ 
+ 
+                }
+ 
+            }
+        }
+ 
+        .region-third {
+            float: left;
+            width: 100%;
+            background: #f5f5f5;
+            padding: 0 20px;
+            display: block;
+            @include breakpoint($xl-min){
+                padding: 12px 18px 12px;
+            }
+            .visual-hidden {
+                position: absolute;
+                overflow: hidden;
+                clip: rect(1px, 1px, 1px, 1px);
+                width: 1px;
+                height: 1px;
+                word-wrap: normal;
+            }
+            ul {
+                &.menu {
+                    text-align: right;
+                    padding: 10px 0 10px 10px;
+ 
+ 
+                    &::after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                    }
+ 
+                    li {
+                        display: inline-block;
+                        padding: 0 4px;
+                        margin: 0;
+                        font-size: 18px;
+                        line-height: 1.2;
+ 
+                        a {
+                            text-transform: none;
+                            font-family: "Gotham Narrow Bold";
+                            font-size: 13px;
+                            padding-bottom: 6px;
+                        }
+                    }
+                }
+            }
+
+            .block-footer{
+                ul{
+                    &.menu{
+                        display: block;
+                        text-align: center;
+                        margin: 10px 10px 0 10px 10px;
+                        padding: 0;
+                        @include breakpoint($xl-min){
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+        }
+ 
+        .region-fourth {
+            float: left;
+            width: 100%;
+            background: #e0e0e0;
+            color: #cfcfcf;
+            border-left: 1px solid rgb(222, 222, 222);
+            border-right: 1px solid rgb(222, 222, 222);
+            position: relative;
+            @include breakpoint($xl-min){
+                padding: 0 0 0 50px;
+            }
+ 
+            .block-copyright {
+                float: left;
+                text-align: center;
+                width: 100%;
+                padding: 0 30px;
+                margin: 10px 0 10px 0;
+                @include breakpoint($md-min){
+                    width: auto;
+                    padding: 0 20px;
+                    margin: 16px 0 0 0;
+                    text-align: right;
+                }
+                .clearfix {
+                    pre {
+                        text-transform: none;
+                        font-size: 12px;
+                        line-height: 100%;
+                        padding: 0;
+                        margin: 0;
+                        color: #585858;
+                        overflow: hidden;
+                        @include breakpoint($xl-min){
+                            font-size: 14px;
+                        }
+                    }
+                    &::before {
+                        content: " ";
+                        display: table;
+                    }
+                    &::after {
+                        content: " ";
+                        display: table;
+                    }
+                }
+            }
+
+            .logos-footer {
+                float: left;
+                width: 100%;
+                text-align: center;
+                padding-bottom: 10px;
+                @include breakpoint($md-min){
+                    float: right;
+                    width: auto;
+                    padding: 10px 0;
+                    text-align: right;
+                }
+                .clearfix{
+                    a {
+                        font-size: 17px;
+                        line-height: 160%;
+                        display: inline-block;
+                        vertical-align: top;
+                        padding: 0 15px;
+     
+                        img {
+                            width: auto;
+                            height: 26px;
+                            @include breakpoint($md-min){
+                                height: 44px;
+                            }
+     
+                            :last-of-type {
+                                margin: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
